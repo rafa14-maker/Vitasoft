@@ -1,0 +1,22 @@
+Steps to setup the project : 
+
+1 . Creating virtual environments,
+            - python -m venv myenv
+            - myenv\Scripts\activate.bat
+ 
+3 . Installing django
+            - pip install django
+
+4 . install django rest framework ,
+            - pip install djangorestframework
+
+5 . setup config file
+            - pip install django-dotenv
+
+6.  Database Setup (postgresql) 
+            - pip install psycopg2
+            -  in vitasoft app
+                     -  .env 
+                         -  change database name and password (yours one) , my database name was django-vitasoft  
+7. JWT token 
+          - pip install djangorestframework-simpleJWT

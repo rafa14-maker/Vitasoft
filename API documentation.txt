@@ -1,0 +1,163 @@
+API Endpoints documentation ,
+
+User Registration
+
+- Method: POST
+- URL: `http://localhost:8000/api/register/`
+  json
+  {
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john.doe@example.com",
+    "password": "securepassword"
+  }
+ 
+
+User Login
+- Method: POST
+- URL: `http://localhost:8000/api/login/`
+  json
+  {
+    "email": "john.doe@example.com",
+    "password": "securepassword"
+  }
+- Note: use the JWT token
+
+ User Update
+- Method: PUT or PATCH
+- URL: `http://localhost:8000/api/me/update/`
+  - Authorization: JWT token
+  json
+  {
+    "first_name": "Updated John",
+    "last_name": "Updated Doe"
+  }
+
+User Delete
+- Method: DELETE
+- URL: `http://localhost:8000/api/me/delete/`
+  -Authorization: JWT
+
+Projects
+1 . List Projects
+- Method: GET
+- URL: `http://localhost:8000/api/projects/`
+- Authorization: JWT
+
+2. Create Project
+- Method: POST
+- URL: `http://localhost:8000/api/projects/`
+- Authorization: JWT
+  ```json
+  {
+    "name": "New Project",
+    "description": "This is a new project."
+  }
+  ```
+
+3. Retrieve Project
+- Method: GET
+- URL: `http://localhost:8000/api/projects/{project_id}/`
+- Headers:
+  - Authorization: Token <your_token_here>
+
+4 . Update Project
+- Method: PUT or PATCH
+- URL: `http://localhost:8000/api/projects/{project_id}/`
+- Authorization: Token <your_token_here
+  ```json
+  {
+    "name": "Updated Project Name",
+    "description": "Updated project description."
+  }
+  ```
+
+5. Delete Project
+- Method: DELETE
+- URL: `http://localhost:8000/api/projects/{project_id}/`
+- Authorization: Token <your_token_here>
+
+Tasks
+
+1.List Tasks in a Project
+- Method: GET
+- URL: `http://localhost:8000/api/projects/{project_id}/tasks/`
+- Authorization: JWT
+
+2.Create Task
+- Method: POST
+- URL: `http://localhost:8000/api/projects/{project_id}/tasks/`
+- Authorization: JWT
+  ```json
+  {
+    "title": "New Task",
+    "description": "This is a new task.",
+    "status": "To Do",
+    "priority": "Medium"
+  }
+  ```
+
+3.Retrieve Task
+- Method: GET
+- URL: `http://localhost:8000/api/tasks/{task_id}/`
+- Authorization: JWT
+
+4.Update Task
+- Method: PUT or PATCH
+- URL: `http://localhost:8000/api/tasks/{task_id}/`
+- Authorization: JWT
+  ```json
+  {
+    "title": "Updated Task Title",
+    "description": "Updated task description.",
+    "status": "In Progress",
+    "priority": "High"
+  }
+  ```
+
+5. Delete Task
+- Method: DELETE
+- URL: `http://localhost:8000/api/tasks/{task_id}/`
+- Authorization: Token <your_token_here>
+
+  Comments
+
+1. List Comments on a Task
+
+- Method: GET
+- URL: `http://localhost:8000/api/tasks/{task_id}/comments/`
+- Authorization: JWT
+
+2 . Create Comment on a Task
+
+- Method: POST
+- URL: `http://localhost:8000/api/tasks/{task_id}/comments/`
+- Authorization: JWT
+- Body (raw, JSON):
+  ```json
+  {
+    "content": "This is a new comment."
+  }
+  ```
+
+3 . Retrieve Comment
+- Method: GET
+- URL: `http://localhost:8000/api/comments/{comment_id}/`
+- Authorization: JWT
+
+4 . Update Comment
+- Method: PUT or PATCH
+- URL: `http://localhost:8000/api/comments/{comment_id}/`
+- Authorization:JWT
+  ```json
+  {
+    "content": "Updated comment content."
+  }
+  ```
+
+5. Delete Comment
+
+- Method: DELETE
+- URL: `http://localhost:8000/api/comments/{comment_id}/`
+- Authorization: JWT
+S
